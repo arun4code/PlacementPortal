@@ -7,7 +7,7 @@ Given in the file "initialmysql queries.txt".
 Run these queries as root in mysql.
 
 /home.php - Home page for the website
-/admin_login.php - For admin login 
+/admin_login.php - For admin login page
 
 First admin has to be created manually. Query given at the end of same text file.
 
