@@ -1,0 +1,52 @@
+<?php
+$content.='<div  style="position:absolute;left:151px;top:100px;width:532px;height:427px;z-index:19;">
+				<div style="position:absolute;left:10px;top:239px;width:119px;height:32px;z-index:17;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;"><b>PRESENT</b><br></span></div>
+				<div style="position:absolute;left:10px;top:26px;width:119px;height:16px;z-index:16;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;"><b>PERMANENT</b></span></div>
+				<div  style="position:absolute;left:10px;top:61px;width:119px;height:16px;z-index:0;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">ADDRESS *: </span></div>
+				
+				<textarea style="position:absolute;left:139px;top:61px;width:308px;height:69px;line-height:23px;z-index:18;" rows="5" cols="45" name="permaddress"  onblur="nsi_permadd(this)" >';if($todo=='edit')$content.="$permaddress";$content.='</textarea>
+				<div  style="position:absolute;left:10px;top:137px;width:119px;height:16px;z-index:2;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">MOBILE NO *:</span></div>
+				<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$permmobileno";
+			$content.='"  style="position:absolute;left:139px;top:137px;width:198px;height:23px;line-height:23px;z-index:3;" name="permmobno" onblur="nsi_permmob(this)">
+				<div  style="position:absolute;left:10px;top:167px;width:119px;height:16px;z-index:4;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">EMAIL ADDRESS *:</span></div>
+				<input type="email"  value="';
+			if($todo=='edit')
+			$content.="$permemail";
+			$content.='" style="position:absolute;left:139px;top:167px;width:198px;height:23px;line-height:23px;z-index:5;" name="permemail"  onblur="nsi_permemail(this)">
+				<div  style="position:absolute;left:10px;top:197px;width:119px;height:16px;z-index:6;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">PHONE NO *:</span></div>
+				<input type="text"   value="';
+			if($todo=='edit')
+			$content.="$permphoneno";
+			$content.='" style="position:absolute;left:139px;top:197px;width:198px;height:23px;line-height:23px;z-index:7;" name="permphone" onblur="nsi_permphone(this)">
+				
+				<div  style="position:absolute;left:10px;top:270px;width:119px;height:16px;z-index:8;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">ADDRESS : </span></div>
+				<textarea style="position:absolute;left:139px;top:270px;width:308px;height:69px;line-height:23px;z-index:9;" name="presentaddress" >';if($todo=='edit')$content.="$presentaddress";$content.='</textarea>
+				<div  style="position:absolute;left:10px;top:346px;width:119px;height:16px;z-index:10;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">MOBILE NO :</span></div>
+				<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$presentmobileno";
+			$content.='"  style="position:absolute;left:139px;top:346px;width:198px;height:23px;line-height:23px;z-index:11;" name="presentmobno" onblur="nsi_presentmobno(this)">
+				<div  style="position:absolute;left:10px;top:376px;width:119px;height:16px;z-index:12;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">EMAIL ADDRESS :</span></div>
+				<input type="text"   value="';
+			if($todo=='edit')
+			$content.="$presentemail";
+			$content.='" style="position:absolute;left:139px;top:376px;width:198px;height:23px;line-height:23px;z-index:13;" name="presentemail" onblur="nsi_presentemail(this)">
+				<div  style="position:absolute;left:10px;top:406px;width:119px;height:16px;z-index:14;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">PHONE NO:</span></div>
+				<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$presentphoneno";
+			$content.='"  style="position:absolute;left:139px;top:406px;width:198px;height:23px;line-height:23px;z-index:15;" name="presentphone" value="" onblur="nsi_presentphoneno(this)">
+				</div>';
+				?>

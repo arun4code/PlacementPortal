@@ -1,0 +1,66 @@
+<?php
+$nameofcolumns=array("admno","fullname","degree","branch","admissionyear","category","dob","gender","age","ecact","adinfo","perc10","perc12","board10","board12",
+	"year10","year12","sgpa1","cgpa1","mysem1","sgpa2","cgpa2","mysem2","sgpa3","cgpa3","mysem3","sgpa4","cgpa4","mysem4","sgpa5","cgpa5","mysem5","sgpa6","cgpa6","mysem6","sgpa7","cgpa7","mysem7","sgpa8","cgpa8","mysem8","passfirstattempt","listelectives",
+	"topicseminar","topicproject","present_address","present_mobileno","present_email","present_phoneno","perm_address","perm_phoneno","perm_mobileno","perm_email",);
+$actualnameofcolumns2=array("Admission Number","Full Name","Degree","Branch","Admission Year","Category","Date of Birth","Gender","Age","Extra-curricular activities","Additional Info",
+	"10th std. percentage","12th std. percentage","10th std. board","12th std. board","10th std. passing year","12th std. passing year","Semester 1 - SGPA","Semester 1 - CGPA",
+	"Semester 1 - Passing month","Semester 2 - SGPA","Semester 2 - CGPA","Semester 2 - Passing month","Semester 3 - SGPA","Semester 3 - CGPA","Semester 3 - Passing month",
+	"Semester 4 - SGPA","Semester 4 - CGPA","Semester 4 - Passing month","Semester 5 - CGPA","Semester 5 - SGPA","Semester 5 - Passing month","Semester 6 - SGPA","Semester 6 - CGPA",
+	"Semester 6 - Passing month","Semester 7 - SGPA","Semester 7 - CGPA","Semester 7 - Passing month","Semester 8 - SGPA","Semester 8 - CGPA","Semester 8 - Passing month",
+	"Passed all examinations in first attempt?","Topic of Seminar","Topic of Project","List of Electives","Present Address","Present Mobile no.","Present Phone no.",
+	"Present Email address","Permanent Address","Permanent Mobile no.","Permanent Phone no.","Permanent Email address");
+$actualnameofcolumns=array();
+$actualnameofcolumns['admno']='Admission Number';
+$actualnameofcolumns['fullname']='Full Name';
+$actualnameofcolumns['degree']='Degree';
+$actualnameofcolumns['branch']='Branch';
+$actualnameofcolumns['admissionyear']='Admission Year';
+$actualnameofcolumns['category']='Category';
+$actualnameofcolumns['dob']='Date of Birth';
+$actualnameofcolumns['gender']='Gender';
+$actualnameofcolumns['age']='Age';
+$actualnameofcolumns['ecact']='Extra-curricular activities';
+$actualnameofcolumns['adinfo']='Additional Info';
+$actualnameofcolumns['perc10']='10th std. percentage';
+$actualnameofcolumns['perc12']='12th std. percentage';
+$actualnameofcolumns['board10']='10th std. board';
+$actualnameofcolumns['board12']='12th std. board';
+$actualnameofcolumns['year10']='10th std. passing year';
+$actualnameofcolumns['year12']='12th std. passing year';
+$actualnameofcolumns['sgpa1']='Semester 1 - SGPA';
+$actualnameofcolumns['cgpa1']='Semester 1 - CGPA';
+$actualnameofcolumns['mysem1']='Semester 1 - Passing month';
+$actualnameofcolumns['sgpa2']='Semester 2 - SGPA';
+$actualnameofcolumns['cgpa2']='Semester 2 - CGPA';
+$actualnameofcolumns['mysem2']='Semester 2 - Passing month';
+$actualnameofcolumns['sgpa3']='Semester 3 - SGPA';
+$actualnameofcolumns['cgpa3']='Semester 3 - CGPA';
+$actualnameofcolumns['mysem3']='Semester 3 - Passing month';
+$actualnameofcolumns['sgpa4']='Semester 4 - SGPA';
+$actualnameofcolumns['cgpa4']='Semester 4 - CGPA';
+$actualnameofcolumns['mysem4']='Semester 4 - Passing month';
+$actualnameofcolumns['sgpa5']='Semester 5 - CGPA';
+$actualnameofcolumns['cgpa5']='Semester 5 - SGPA';
+$actualnameofcolumns['mysem5']='Semester 5 - Passing month';
+$actualnameofcolumns['sgpa6']='Semester 6 - SGPA';
+$actualnameofcolumns['cgpa6']='Semester 6 - CGPA';
+$actualnameofcolumns['mysem6']='Semester 6 - Passing month';
+$actualnameofcolumns['sgpa7']='Semester 7 - SGPA';
+$actualnameofcolumns['cgpa7']='Semester 7 - CGPA';
+$actualnameofcolumns['mysem7']='Semester 7 - Passing month';
+$actualnameofcolumns['sgpa8']='Semester 8 - SGPA';
+$actualnameofcolumns['cgpa8']='Semester 8 - CGPA';
+$actualnameofcolumns['mysem8']='Semester 8 - Passing month';
+$actualnameofcolumns['passfirstattempt']='Passed all examinations in first attempt?';
+$actualnameofcolumns['listelectives']='Topic of Seminar';
+$actualnameofcolumns['topicseminar']='Topic of Project';
+$actualnameofcolumns['topicproject']='List of Electives';
+$actualnameofcolumns['present_address']='Present Address';
+$actualnameofcolumns['present_mobileno']='Present Mobile no.';
+$actualnameofcolumns['present_email']='Present Phone no.';
+$actualnameofcolumns['present_phoneno']='Present Email address';
+$actualnameofcolumns['perm_address']='Permanent Address';
+$actualnameofcolumns['perm_phoneno']='Permanent Mobile no.';
+$actualnameofcolumns['perm_mobileno']='Permanent Phone no.';
+$actualnameofcolumns['perm_email']='Permanent Email address';
+?>

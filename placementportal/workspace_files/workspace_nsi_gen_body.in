@@ -1,0 +1,112 @@
+<?php
+$content.='<div style="position:absolute;left:151px;top:120px;width:571px;height:457px;z-index:30;">
+			
+				<div style="position:absolute;left:7px;top:21px;width:112px;height:16px;z-index:19;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">ADMISSION NO *:</span></div>
+				<div  style="position:absolute;left:237px;top:23px;width:16px;height:16px;z-index:20;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">';
+				$content.="$setadmno";
+				$content.='</span></div>
+				<input type="hidden" name="degree" value=';
+				$content.="'{$_POST['degree']}'";
+				$content.='>
+				<input type="hidden" name="admyear" value=';
+				$content.="'{$_POST['admyear']}'";
+				$content.='>
+				<input type="hidden" name="branch" value=';
+				$content.="'$branch'";
+				$content.='>
+				<input type="hidden" name="branchrollno" value=';
+				$content.="'{$_POST['branchrollno']}'";
+				$content.='>
+				<div  style="position:absolute;left:10px;top:52px;width:212px;height:16px;z-index:3;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">FULL NAME *:</span></div>
+				<input type="text" value="';
+			if($todo=='edit')
+			$content.="$fullname";
+			$content.='" style="position:absolute;left:232px;top:53px;width:308px;height:23px;line-height:23px;z-index:4;" name="fullname" onblur="nsi_firstname(this)">
+				<div style="position:absolute;left:10px;top:82px;width:212px;height:16px;z-index:5;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">CATEGORY *:</span></div>
+				<select name="category" size="1"  style="position:absolute;left:232px;top:82px;width:310px;height:25px;z-index:6;">
+				<option value="GENERAL" ';
+			if($todo=='edit' && $category=='GENERAL')
+			$content.="selected='selected' ";
+			$content.='>General</option>
+				<option value="SC" ';
+			if($todo=='edit' && $category=='SC')
+			$content.="selected='selected' ";
+			$content.='>SC</option>
+				<option value="ST" ';
+			if($todo=='edit' && $category=='ST')
+			$content.="selected='selected' ";
+			$content.='>ST</option>
+				<option value="OBC" ';
+			if($todo=='edit' && $category=='OBC')
+			$content.="selected='selected' ";
+			$content.='>OBC</option>
+				</select>
+				<div  style="position:absolute;left:10px;top:112px;width:215px;height:16px;z-index:7;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">D.O.B.(enter in yyyy-mm-dd format if calender drop down not available)*:</span></div>
+				<input type="date"  value="';
+			if($todo=='edit')
+			$content.="$dob";
+			$content.='"  style="position:absolute;left:232px;top:113px;width:308px;height:23px;line-height:23px;z-index:8;" name="dob" onblur="nsi_dob(this)">
+				<div  style="position:absolute;left:10px;top:142px;width:212px;height:16px;z-index:9;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">GENDER *:</span></div>
+				<select name="gender" size="1"  style="position:absolute;left:232px;top:142px;width:310px;height:25px;z-index:10;">
+				<option value="MALE"  ';
+			if($todo=='edit' && $gender=='MALE')
+			$content.="selected='selected' ";
+			$content.='>MALE</option>
+				<option value="FEMALE" ';
+			if($todo=='edit' && $gender=='FEMALE')
+			$content.="selected='selected' ";
+			$content.='>FEMALE</option>
+				</select>
+				<div  style="position:absolute;left:10px;top:172px;width:212px;height:16px;z-index:11;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">HEIGHT (in cms.) : </span></div>
+				<input type="text" name="height"  value="';
+			if($todo=='edit')
+			$content.="$height";
+			$content.='"   style="position:absolute;left:232px;top:172px;width:310px;height:25px;z-index:12;">
+				<div  style="position:absolute;left:10px;top:202px;width:212px;height:16px;z-index:13;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">WEIGHT (in kgs.) :</span></div>
+				<input type="text" name="weight"  value="';
+			if($todo=='edit')
+			$content.="$weight";
+			$content.='" style="position:absolute;left:232px;top:202px;width:310px;height:25px;z-index:14;">
+			
+				<div  style="position:absolute;left:10px;top:232px;width:212px;height:16px;z-index:15;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">EXTRA-CURRICULAR ACTIVITIES :</span></div>
+				<textarea name="ecact"  style="position:absolute;left:232px;top:232px;width:308px;height:98px;z-index:16;" rows="5" cols="45">';
+			if($todo=='edit') 
+			$content.=$ecact;
+			$content.='</textarea>
+				<div  style="position:absolute;left:10px;top:337px;width:212px;height:16px;z-index:17;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">ADDITIONAL INFO :</span></div>
+				<textarea name="adinfo"  style="position:absolute;left:232px;top:337px;width:308px;height:98px;z-index:18;" rows="5" cols="45">';
+			if($todo=='edit')
+			$content.=$adinfo;
+			$content.='</textarea>
+				
+				
+				<div style="position:absolute;left:10px;top:450px;width:100px;height:16px;z-index:0;text-align:left;">
+				<span style="color:#000000;font-family:Arial;font-size:13px;">UPLOAD RESUME(max 5 MB, either a pdf or word file)(old version will be deleted automatically):</span>
+				<input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
+				
+				<input type="file" style="position:absolute;left:220px;top:0px;width:198px;height:23px;z-index:1;" name="resume" id="resume" onchange="resume_validate(this)"/>
+			';
+			if($todo=='edit')
+			{
+				$content.="<div style='position:absolute;left:220px;top:25px;width:198px;height:23px;z-index:20;'><a href='./workspace_resumedownload.php?admno=$setadmno'>CLICK HERE TO DOWNLOAD CURRENT VERSION</a></div>";
+				$content.='<div style="position:absolute;left:220px;top:70px;width:198px;height:23px;z-index:25;">
+				<input type="checkbox" name="deleteresume"  style="position:absolute;left:5px;" value="true" />
+				<span style="color:#000000;font-family:Arial;font-size:13px;position:absolute;left:30px;">Tick the box to just delete old version of resume</span>
+				</div>';
+			}
+			$content.='
+				</div>
+				
+				</div>
+				';
+				?>
