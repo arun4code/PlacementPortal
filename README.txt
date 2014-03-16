@@ -1,5 +1,6 @@
 This is a web application (developed using PHP and MySQL) that aids colleges and recruiters in the student placement process. 
-The recruiters can browse though, filter, sort or search student information in the database. Backup and restoration of data and account maintenance for recruiters as well as students can be done through admin account.
+The recruiters can browse though, filter, sort or search student information in the database. 
+Backup and restoration of data and account maintenance for recruiters as well as students can be done through admin account.
 I have developed it in context of my college.
 
 INITIAL MYSQL QUERIES:
