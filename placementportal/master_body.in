@@ -1,0 +1,183 @@
+<div id="container">
+<div id="layer_main" style="position:absolute;text-align:left;left:5px;top:37px;width:1025px;height:1408px;z-index:11;border-radius:5px;box-shadow:2px 2px 10px 10px #ffffff;">
+
+<img src="./master_files/banner.png" id="layer_banner" style="position:absolute;text-align:left;left:0px;top:0px;width:1025px;height:239px;z-index:12;" title="">
+<img src="./master_files/logo.png" id="layer_banner" style="position:absolute;text-align:left;left:800px;top:20px;width:200px;height:200px;z-index:12;border-width:2px;" title="">
+<marquee direction="left" scrolldelay="90" scrollamount="6" behavior="scroll" loop="0" style="position:absolute;left:195px;top:246px;width:544px;height:22px;z-index:0;" id="marquee_welcome" onmouseover="this.stop()" onmouseout="this.start()"><span style="color:#666666;font-family:Arial;font-size:13px;">Welcome to Training and Placement Portal!</span></marquee>
+<div id="text_status" style="position:absolute;left:765px;top:251px;width:250px;height:16px;z-index:1;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">
+<?php 
+if(isset($_SESSION['username']))
+{
+	if($_SESSION['type']=='admin')
+		echo "Logged in as Admin ";
+	else if($_SESSION['type']=='recruiter')
+		echo "Logged in as Recruiter ";
+	else if($_SESSION['type']=='student')
+		echo "Logged in as Student ";
+	echo $_SESSION['username'];
+}
+else
+echo '   Not Logged In';
+?>
+</span></div>
+<div id="content" style="position:absolute;left:240px;top:342px;width:770px;height:622px;z-index:4;">
+<?php
+echo $content;
+?>
+</div>
+<?php
+if($vertical_menu!='')
+	{
+	echo '
+		<div id="verticalmenu_div" style="position:absolute;left:5px;top:342px;width:220px;height:900px;overflow:auto;">
+		';
+	echo $vertical_menu;
+	echo '
+		
+	</div>';
+}
+?>
+<div id="date" style="position:absolute;left:5px;top:246px;width:100px;height:25px;z-index:2;color:#000000;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-decoration:none;">
+Saturday, June 01, 2013
+<script type="text/javascript">
+   var now = new Date();
+   var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+   var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+   var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+   var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
+   today = days[now.getDay()] + ",<br>" + months[now.getMonth()] + " " + date + ", " + year;
+   var basicdate = document.getElementById('date');
+   basicdate.innerHTML = today;
+</script>
+
+
+</div>
+<div id="time" style="position:absolute;left:119px;top:249px;width:60px;height:25px;z-index:3;">
+<div style="color:#000000;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-decoration:none" id="clock">18:16:06</div>
+<script type="text/javascript">
+function clock() 
+{
+   var time=new Date();
+   var hours=time.getHours();
+   var minutes=time.getMinutes();
+   var seconds=time.getSeconds();
+   if(minutes<=9) 
+	minutes="0"+minutes;
+   if(seconds<=9)
+	seconds="0"+seconds;
+   ctime = hours + ":" + minutes + ":" + seconds;
+
+   var idclock = document.getElementById('clock');
+   idclock.innerHTML = ctime;
+   setTimeout("clock()", 1000);
+}
+clock();
+</script>
+
+</div>
+
+<span style="position:absolute;left:5px;top:281px;width:230px;height:32px;z-index:20;text-align:center;vertical-align:middle;color:#000000;font-family:Arial;font-size:13px;overflow:auto;">You are at :
+<?php
+echo "$currently_at";
+?>
+<br></span>
+
+<div  style="position:absolute;left:0px;top:280px;width:1025px;height:36px;z-index:7;text-align:left;background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #fefefe 24%, #eaeaea 48%, #d8d8d8 66%, #bbbbbb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(24%,#fefefe), color-stop(48%,#eaeaea), color-stop(66%,#d8d8d8), color-stop(100%,#bbbbbb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#fefefe 24%,#eaeaea 48%,#d8d8d8 66%,#bbbbbb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#fefefe 24%,#eaeaea 48%,#d8d8d8 66%,#bbbbbb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#fefefe 24%,#eaeaea 48%,#d8d8d8 66%,#bbbbbb 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#fefefe 24%,#eaeaea 48%,#d8d8d8 66%,#bbbbbb 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bbbbbb',GradientType=0 ); /* IE6-9 */">
+
+<ul id="horizontalmenu" class="topmenu" style="position:absolute;left:239px;width:
+	<?php
+	if(isset($_SESSION['username']))
+	{
+			echo '671px;"><li class="topfirst"><a href="./workspace.php" style="width:75px;height:15px;line-height:15px;">Workspace</a></li>';
+	}
+	else
+	{
+		echo '576px;"><li class="topfirst"><a href="./login.php" style="width:75px;height:15px;line-height:15px;">Log In</a></li>';
+	}
+	?>
+	<li class="topmenu"><a href="./home.php" style="width:75px;height:15px;line-height:15px;">Home</a></li>
+	<li class="topmenu"><a href="./whyrecruit.php" style="width:75px;height:15px;line-height:15px;">Recruiters</a>
+	<ul>
+		<li class="subfirst"><a href="./login_recruiters.php">Login</a></li>
+		<li class="subfirst"><a href="./whyrecruit.php">Why Recruit?</a></li>
+		<li class="subfirst"><a href="./studentsachievements.php">Students' Achievements</a></li>
+		<li class="subfirst"><a href="./howtoreach.php">How to reach</a></li>
+		<li class="subfirst"><a href="#">Procedure for recruitment</a></li>
+		<li class="subfirst"><a href="#">Previous Recruiters</a></li>
+	</ul>
+	</li>
+	<li class="topmenu"><a href="./placementstatistics.php" style="width:75px;height:15px;line-height:15px;">Students</a>
+		<ul>
+		<li class="subfirst"><a href="./login_students.php">Login</a></li>
+		<li class="subfirst"><a href="./placementstatistics.php">Placement Records</a></li>
+	</ul>
+	</li>
+	<li class="topmenu"><a href="./departments.php" style="width:75px;height:15px;line-height:15px;">Academic</a>
+		<ul>
+		<li class="subfirst"><a href="./departments.php">Departments</a></li>
+		<li class="subfirst"><a href="./coursesoffered.php">Courses Offered</a></li>
+		</ul>
+	</li>
+	
+
+	<?php
+	if(isset($_SESSION['username']))
+	{
+			echo '<li class="topmenu"><a href="./history.php" style="width:75px;height:15px;line-height:15px;">About</a>
+				<ul>
+				<li class="subfirst"><a href="./directorsmessage.php">Director\'s Message</a></li>
+				<li class="subfirst"><a href="./history.php">History</a></li>
+				<li class="subfirst"><a href="./howtoreach.php">How to reach</a></li>
+				<li class="subfirst"><a href="./contactus.php">Contact Us</a></li>
+		
+				</ul>
+		</li>';
+			echo '<li class="toplast"><a href="./logout.php" style="width:74px;height:15px;line-height:15px;">Logout</a></li>';
+	}
+	else
+	{
+		echo '<li class="toplast"><a href="./history.php" style="width:75px;height:15px;line-height:15px;">About</a>
+				<ul>
+				<li class="subfirst"><a href="./directorsmessage.php">Director\'s Message</a></li>
+				<li class="subfirst"><a href="./history.php">History</a></li>
+				<li class="subfirst"><a href="./howtoreach.php">How to reach</a></li>
+				<li class="subfirst"><a href="./contactus.php">Contact Us</a></li>
+		
+				</ul>
+		</li>';
+	}
+	?>
+</ul>
+</div>
+<!-- <hr id="line_divide" style="margin:0;padding:0;position:absolute;left:0px;top:307px;width:239px;height:1px;z-index:15;">
+ <?php
+if(isset($_SESSION['username']))
+	echo '<hr id="line_divide" style="margin:0;padding:0;position:absolute;left:908px;top:307px;width:119px;height:1px;z-index:15;">';
+else
+	echo '<hr id="line_divide" style="margin:0;padding:0;position:absolute;left:813px;top:307px;width:212px;height:1px;z-index:15;">';
+?>
+-->
+
+
+<div id="footer" style="position:absolute;top:1371px;width:1025px;height:36px;left:0px;background-color:#E2E2E2;z-index:20;">
+<hr id="line_divide" style="margin:0;padding:0;position:absolute;left:0px;top:0;width:1025px;height:1px;z-index: 15;">
+<span style="position:absolute;left:20px;top:10px;color:#000000;font-family:Arial;font-size:13px;"><b>College</b> Official Website: <a href="#">www.collegename.ac.in</a></span>
+<span style="position:absolute;left:850px;top:10px;color:#000000;font-family:Arial;font-size:13px;"><a href="./home.php"><b>Home</b></a> | <a href="./contactus.php"><b>Contact Us</b></a></span>
+</div>
+<?php
+echo $insidelayer_main;
+?>
+</div>
+
+
+
+</div>
+

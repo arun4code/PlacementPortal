@@ -1,0 +1,38 @@
+<?php
+$vertical_menu='
+<div id="vertical_menu" style="position:absolute;left:6px;top:15px;width:200px;height:px;z-index:16;border-radius:5px;box-shadow:2px 2px 10px 10px #C9C9C9;text-align:center;" overflow="auto">
+<ul align="center">
+	<li class="vertical_menu_main" >
+	<div id="navigationtitle" style="display:block;position:relative;background-color:#666666;border-bottom-width:3px;border-bottom-color:#EEEEEE;text-align:center;"><a><b><span style="position:absolute;top:1px;left:5px;font-size:25px"></span>WEBSITE NAVIGATION</b></a></div>
+		</li>';
+		if(!(isset($_SESSION['type'])))
+		{
+			$vertical_menu.= '
+			 <li class="vertical_menu_main"><a href="./login.php" style="height:15px;line-height:15px;"><div ><b>LOG IN</b></div></a>
+			</li>';
+		}
+		else
+		{
+		
+			$vertical_menu.= '
+			 <li class="vertical_menu_main"><a href="./workspace.php" style="height:15px;line-height:15px;"><div ><b>WORKSPACE</b></div></a>
+			</li>';
+		}
+		$vertical_menu.= '
+		 
+		 <li class="vertical_menu_main"><div ><a href="./home.php" style="height:15px;line-height:15px;"><b>HOME</b></div></a>
+		</li>
+		<li class="vertical_menu_main"><a href="./whyrecruit.php"><div style="height:15px;line-height:15px;"><b>RECRUITERS</b></div></a>
+		</li>
+		<li class="vertical_menu_main"><a href="./placementstatistics.php"><div style="height:15px;line-height:15px;"><b>STUDENTS</b></div></a>
+		</li>
+		 <li class="vertical_menu_main"><a href="./departments.php"><div style="height:15px;line-height:15px;"><b>ACADEMIC</b></div></a>
+		</li>
+		<li class="vertical_menu_main"><a href="./history.php"><div style="height:15px;line-height:15px;"><b>ABOUT</b></div></a>
+		</li>
+		
+   
+     
+</ul>
+</div>';
+?>

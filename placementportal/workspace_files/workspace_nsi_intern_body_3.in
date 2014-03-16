@@ -1,0 +1,137 @@
+<script type="text/javascript">
+var internarray=Array();
+internarray[0]="internship1";
+internarray[1]="internship2";
+internarray[2]="internship3";
+internarray[3]="internship4";
+internarray[4]="internship5";
+</script>
+<?php
+$content.='
+<input type="button" value="Add another internship/training" style="position:absolute;top:80px;" onclick="addinternship()">
+<div  style="position:absolute;left:51px;top:80px;width:532px;height:427px;z-index:19;">
+<table id="table_internship" style="position:absolute;left:12px;top:30px;width:648px;height:268px;z-index:2;" cellpadding="0" cellspacing="0" >
+<tbody><tr>
+
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">NAME OF ORGANISATION</span></td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">DURATION (IN DAYS)</span></td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;height:42px;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">FIELD OF TRAINING/INTERNSHIP</span></td>
+</tr>
+<div id="internship1">
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;center-align:top;width:212px;height:42px;">
+<input type="text"  style="width:200px;height:23px;line-height:23px;z-index:3;" name="intern_orgname[]"   value="';
+			if($todo=='edit' && isset($nameofcompany[0]))
+			$content.="$nameofcompany[0]";
+			$content.='">
+
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<input type= "number" name="intern_days[]" style="width:198px;height:23px;line-height:23px;z-index:9;" value="';
+			if($todo=='edit' && isset($durationoftraining[0]))
+			$content.="$durationoftraining[0]";
+			$content.='" onblur="nsi_interndays(this)"></td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;height:42px;">
+<input type="text"  style="width:198px;height:23px;line-height:23px;z-index:13;" name="intern_field[]"   value="';
+			if($todo=='edit' && isset($fieldoftraining[0]))
+			$content.="$fieldoftraining[0]";
+			$content.='">
+</td>
+</tr>
+</div>
+<div id="internship2" style="display:none;">
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<input type="text"  style="width:198px;height:23px;line-height:23px;z-index:9;" name="intern_orgname[]"  value="';
+			if($todo=='edit' && isset($nameofcompany[1]))
+			$content.="$nameofcompany[1]";
+			$content.='" ></td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<input type= "number" name="intern_days[]" style="width:200px;height:25px;z-index:5;"  value="';
+			if($todo=='edit' && isset($durationoftraining[1]))
+			$content.="$durationoftraining[1]";
+			$content.='" onblur="nsi_interndays(this)"></td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;height:42px;">
+<input type="text"  style="width:198px;height:23px;line-height:23px;z-index:14;" name="intern_field[]"   value="';
+			if($todo=='edit' && isset($fieldoftraining[1]))
+			$content.="$fieldoftraining[1]";
+			$content.='" ></td>
+</tr>
+</div>
+<div id="internship3" style="display:none;">
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<input type="text"  style="width:198px;height:23px;line-height:23px;z-index:10;" name="intern_orgname[]"  value="';
+			if($todo=='edit' && isset($nameofcompany[2]))
+			$content.="$nameofcompany[2]";
+			$content.='" ></td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+
+<input type= "number" name="intern_days[]"  style="width:200px;height:25px;z-index:6;"  value="';
+			if($todo=='edit' && isset($durationoftraining[2]))
+			$content.="$durationoftraining[2]";
+			$content.='" onblur="nsi_interndays(this)">
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;height:42px;">
+
+<input type="text"  style=" width:198px;height:23px;line-height:23px;z-index:15;" name="intern_field[]"    value="';
+			if($todo=='edit' && isset($fieldoftraining[2]))
+			$content.="$fieldoftraining[2]";
+			$content.='"></td>
+</tr>
+</div>
+<div id="internship4" style="display:none;"> 
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+
+<input type="text"  style="width:198px;height:23px;line-height:23px;z-index:11;" name="intern_orgname[]"   value="';
+			if($todo=='edit' && isset($nameofcompany[3]))
+			$content.="$nameofcompany[3]";
+			$content.='"></td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<input type= "number" name="intern_days[]"  style="width:200px;height:25px;z-index:7;"  value="';
+			if($todo=='edit' && isset($durationoftraining[3]))
+			$content.="$durationoftraining[3]";
+			$content.='"  onblur="nsi_interndays(this)"></td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;height:42px;">
+
+<input type="text"  style="width:198px;height:23px;line-height:23px;z-index:16;" name="intern_field[]"    value="';
+			if($todo=='edit' && isset($fieldoftraining[3]))
+			$content.="$fieldoftraining[3]";
+			$content.='"></td>
+</tr>
+</div>
+<div id="internship5" style="display:none;">
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<input type="text"  style="width:198px;height:23px;line-height:23px;z-index:12;" name="intern_orgname[]"   value="';
+			if($todo=='edit' && isset($nameofcompany[4]))
+			$content.="$nameofcompany[4]";
+			$content.='">
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;width:212px;height:42px;">
+<input type= "number" name="intern_days[]"  style="width:200px;height:25px;z-index:8;"  value="';
+			if($todo=='edit' && isset($durationoftraining[4]))
+			$content.="$durationoftraining[4]";
+			$content.='"  onblur="nsi_interndays(this)">
+			</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:center;height:42px;">
+<input type="text"  style="width:198px;height:23px;line-height:23px;z-index:17;" name="intern_field[]"    value="';
+			if($todo=='edit' && isset($fieldoftraining[4]))
+			$content.="$fieldoftraining[4]";
+			$content.='"></td>
+</tr>
+</div>
+</tbody></table>
+<input type="reset"  name="reset" value="Reset" style="position:absolute;left:209px;top:344px;width:96px;height:25px;z-index:19;">
+<input type="submit"  name="nsi_submit" value="Submit" style="position:absolute;left:354px;top:345px;width:96px;height:25px;z-index:20;">
+</div>';
+?>
+
+
+
+select distinct students_general.admno,fullname,degree,branch,cgpatillnow from students_general,students_academic,students_training where students_general.admno=students_training.admno and students_general.admno=students_academic.admno and ( adinfo like '%tranformers%' or ecact like '%tranformers%' or topicproject like '%tranformers%' or topicseminar like '%tranformers%' or fieldoftraining like '%tranformers%') LIMIT 0,10SEARCH RESULTS
+Sr. No.Admission NumberFull NameDegree PursuingBranchCGPA

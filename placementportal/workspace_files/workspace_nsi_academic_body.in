@@ -1,0 +1,351 @@
+<script type="text/javascript">
+function passnotdetailsbox(obj)
+{
+	var tbox=document.getElementById('passfirstattemptdetails');
+	if(obj.checked==false)
+	{
+		tbox.style.display='block';
+	}
+	else
+		tbox.style.display='none';
+	
+}
+</script>
+<?php
+$content.='
+			<div  style="position:absolute;top:150px;left:100px;width:600px;height:800px;z-index:19;overflow:auto;">
+			<table style="position:absolute;left:0px;top:0px;width:560px;height:156px;z-index:12;text-align:center;vertical-align:middle;" border="1" id="table_precollege">
+			<caption>
+			<b>PRE-COLLEGE RECORD</b>
+			</caption>
+			<tbody>
+			
+			<tr>
+			<td >
+			<span style="color:#000000;font-family:Arial;font-size:13px;"><b>EXAMINATION</b></span></td>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;"><b>BOARD*</b></span></td>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;"><b>YEAR OF PASSING*</b></span></td>
+			
+			<td >
+			<span style="color:#000000;font-family:Arial;font-size:13px;"><b>PERCENTAGE*</b></span></td>
+			</tr>
+			<tr>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;">X</span></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$board10";
+			$content.='"  style="width:89px;height:23px;line-height:23px;z-index:15;" name="board10"  onblur="nsi_board(this)">
+			</td>
+			<td>
+			
+			<select size="1"  style="width:80px;height:23px;line-height:23px;z-index:13;" name="year10" value="">
+			';
+							$curyear=date("Y");
+							for($i=$curyear-15;$i<=$curyear;$i++)
+							{
+								if($todo!='edit')
+								{
+									if($i!=$curyear-5)
+										$content.="<option value='$i'>";
+									else
+										$content.="<option value='$i' selected='selected'>";
+								}
+								else
+								{
+									if($i==$year10)
+										$content.="<option value='$i' selected='selected'>";
+									else
+										$content.="<option value='$i'>";
+								}
+								
+								
+								
+								$content.="$i";
+								
+								$content.='</option>';
+							}
+			$content.='</select>
+			</td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$perc10";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:15;" name="perc10"  onblur="nsi_perc(this)">%
+			</td>
+			
+			</tr>
+				<tr>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;">XII</span></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$board12";
+			$content.='"  style="width:89px;height:23px;line-height:23px;z-index:15;" name="board12" onblur="nsi_board(this)">
+			</td>
+			<td>
+			<select size="1" style="width:80px;height:23px;line-height:23px;z-index:14;" name="year12" value="">';
+							$curyear=date("Y");
+							for($i=$curyear-15;$i<=$curyear;$i++)
+							{
+								if($todo!='edit')
+								{
+									if($i!=$curyear-5)
+										$content.="<option value='$i'>";
+									else
+										$content.="<option value='$i' selected='selected'>";
+								}
+								else
+								{
+									if($i==$year12)
+										$content.="<option value='$i' selected='selected'>";
+									else
+										$content.="<option value='$i'>";
+								}
+								
+								$content.="$i";
+								
+								$content.='</option>';
+							}
+				
+										
+						$content.='
+							</select>
+			</td>
+			<td>
+			<input type="text" value="';
+			if($todo=='edit')
+			$content.="$perc12";
+			$content.='"  style="width:80px;height:23px;line-height:23px;z-index:15;" name="perc12"  onblur="nsi_perc(this)">%
+			</td>
+			
+			</tr>
+			</tbody></table>
+										
+
+			
+			<table style="position:absolute;top:230px;left:0px;width:516px;height:348px;z-index:15;text-align:center;vertical-align:middle;" border="1" id="table_college">
+			<caption>
+			<b>COLLEGE RECORD</b>
+			</caption>
+			<tbody>
+			<tr>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;"><b>SEMESTER</b></span></td>
+			
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;"><b>MONTH, YEAR OF PASSING<br>(yyyy-mm)</b></span></td>
+			<td><span style="color:#000000;font-family:Arial;font-size:13px;"><b>SGPA</b></span></td>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;"><b>CGPA</b></span></td>
+			</tr>
+		
+			<tr>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;">I *</span></td>
+			<td>
+			<input type="month"  value="';
+			if($todo=='edit')
+			$content.="$mysem1";
+			$content.='"  style="width:180px;height:23px;line-height:23px;z-index:35;" name="mysem1" onblur="nsi_mysem(this,1)"></td>
+			<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$sgpa1";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="sgpa1" onblur="nsi_sgpa(this,1)" ></td>
+			<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$cgpa1";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="cgpa1" onblur="nsi_sgpa(this,1)"></td>
+			</tr>
+			
+			<tr>
+			<td><span style="color:#000000;font-family:Arial;font-size:13px;">II *</span></td>
+			<td>
+			<input type="month"  value="';
+			if($todo=='edit')
+			$content.="$mysem2";
+			$content.='"  style="width:180px;height:23px;line-height:23px;z-index:36;" name="mysem2" onblur="nsi_mysem(this,1)" ></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$sgpa2";
+			$content.='"  style="width:80px;height:23px;line-height:23px;z-index:27;" name="sgpa2"   onblur="nsi_sgpa(this,1)"></td>
+			<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$cgpa2";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="cgpa2" onblur="nsi_sgpa(this,1)"></td>
+			</tr>
+			<tr>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;">III *</span></td>
+			<td>
+			<input type="month"  value="';
+			if($todo=='edit')
+			$content.="$mysem3";
+			$content.='"  style="width:180px;height:23px;line-height:23px;z-index:37;" name="mysem3" onblur="nsi_mysem(this,1)" ></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$sgpa3";
+			$content.='"  style="width:80px;height:23px;line-height:23px;z-index:28;" name="sgpa3"   onblur="nsi_spga(this,1)"></td>
+			<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$cgpa3";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="cgpa3" onblur="nsi_sgpa(this,1)"></td>
+			</tr>
+			<tr>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;">IV *</span></td>
+			<td>
+			<input type="month"  value="';
+			if($todo=='edit')
+			$content.="$mysem4";
+			$content.='"  style="width:180px;height:23px;line-height:23px;z-index:38;" name="mysem4"   onblur="nsi_mysem(this,1)"></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$sgpa4";
+			$content.='"  style="width:80px;height:23px;line-height:23px;z-index:29;" name="sgpa4"   onblur="nsi_sgpa(this,1)"></td>
+			<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$cgpa4";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="cgpa4" onblur="nsi_sgpa(this,1)"></td>
+			</tr>
+			<tr>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;">V</span></td>
+			<td>
+			<input type="month"  value="';
+			if($todo=='edit')
+			$content.="$mysem5";
+			$content.='"  style="width:180px;height:23px;line-height:23px;z-index:39;" name="mysem5" onblur="nsi_mysem(this,2)" ></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$sgpa5";
+			$content.='"  style="width:80px;height:23px;line-height:23px;z-index:30;" name="sgpa5" onblur="nsi_sgpa(this,2)" ></td>
+			<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$cgpa5";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="cgpa5" onblur="nsi_sgpa(this,2)"></td>
+			</tr>
+			<tr>
+			<td>
+			<span style="color:#000000;font-family:Arial;font-size:13px;">VI</span></td>
+			<td>
+			<input type="month"  value="';
+			if($todo=='edit')
+			$content.="$mysem6";
+			$content.='"  style="width:180px;height:23px;line-height:23px;z-index:40;" name="mysem6" onblur="nsi_mysem(this,2)" ></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$sgpa6";
+			$content.='"  style="width:80px;height:23px;line-height:23px;z-index:31;" name="sgpa6" onblur="nsi_sgpa(this,2)"  ></td>
+			<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$cgpa6";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="cgpa6" onblur="nsi_sgpa(this,2)"></td>
+			</tr>
+			
+			<tr><td><span style="color:#000000;font-family:Arial;font-size:13px;">VII</span></td>
+			<td><input type="month"  value="';
+			if($todo=='edit')
+			$content.="$mysem7";
+			$content.='" style="width:180px;height:23px;line-height:23px;z-index:41;" name="mysem7" onblur="nsi_mysem(this,2)" ></td>
+			<td><input type="text"  value="';
+			if($todo=='edit')
+			$content.="$sgpa7";
+			$content.='"  style="width:80px;height:23px;line-height:23px;z-index:32;" name="sgpa7" onblur="nsi_sgpa(this,2)"  ></td>
+				<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$cgpa7";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="cgpa7" onblur="nsi_sgpa(this,2)"></td>
+			</tr>
+			<tr><td><span style="color:#000000;font-family:Arial;font-size:13px;">VIII</span></td>
+			<td>
+			<input type="month"  value="';
+			if($todo=='edit')
+			$content.="$mysem8";
+			$content.='"  style="width:180px;height:23px;line-height:23px;z-index:42;" name="mysem8" onblur="nsi_mysem(this,2)"  ></td>
+			<td><input type="text"  value="';
+			if($todo=='edit')
+			$content.="$sgpa8";
+			$content.='"  style="width:80px;height:23px;line-height:23px;z-index:33;" name="sgpa8" onblur="nsi_sgpa(this,2)"  ></td>
+			<td><input type="text"   value="';
+			if($todo=='edit')
+			$content.="$cgpa8";
+			$content.='" style="width:80px;height:23px;line-height:23px;z-index:26;" name="cgpa8" onblur="nsi_sgpa(this,2)"></td>
+			</tr>
+			</tbody></table>
+			
+			
+			<div style="position:absolute;left:15px;top:800px;">
+			<table style="width:560px;text-align:center;vertical-align:middle;table-layout: fixed;word-wrap : break-word" border="1">
+			<caption>
+			<span style="color:#000000;font-family:Arial;font-size:17px;"><b>OTHER DATA</b></span>
+			</caption>
+			<tbody>
+			<tr>
+			<td style="width:30%;">
+			<span style="color:#000000;font-family:Arial;font-size:13px;">Tick if all examinations were passed in first attempt. If not, then give details: </span></td>
+			<td>
+			<input type="checkbox" name="passfirstattempt" ';
+			if(($todo=='edit' && ($passfirstattempt=='true' || $passfirstattempt=='TRUE' || $passfirstattempt=='True')) || $todo=='new')
+			$content.=' checked=true ';
+			else
+			$content.-' checked=false ';
+			
+			
+			$content.=' style="width:20px;height:40px;line-height:23px;z-index:44;" onchange="passnotdetailsbox(this)"			/>
+			<input type="text" value="';
+			if($todo=='edit')
+			$content.="$passfirstattemptdetails";
+			$content.='"  style="display:';
+			if($todo=='edit' && ($passfirstattempt=='true' || $passfirstattempt=='TRUE' || $passfirstattempt=='True'))
+			$content.='none';
+			else
+			$content.='block';
+			$content.=';width:341px;height:23px;line-height:23px;z-index:44;" name="passfirstattemptdetails" id="passfirstattemptdetails" ></td>
+			</tr>
+			<tr>
+			<td>
+	
+			<span style="color:#000000;font-family:Arial;font-size:13px;">TOPIC OF SEMINAR : </span></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$topicseminar";
+			$content.='"  style="width:341px;height:23px;line-height:23px;z-index:44;" name="topicseminar" ></td>
+			</tr>
+			<tr>
+			<td>
+			
+			
+			<span style="color:#000000;font-family:Arial;font-size:13px;">TOPIC OF PROJECT : </span></td>
+			<td>
+			<input type="text"  value="';
+			if($todo=='edit')
+			$content.="$topicproject";
+			$content.='"  style="width:338px;height:23px;line-height:23px;z-index:48;" name="topicproject"></td>
+			</tr>
+			<tr>
+			<td>
+		
+			<span style="color:#000000;font-family:Arial;font-size:13px;">ELECTIVES / SPECIALISATION : (enter a comma separated list)</span></td>
+			<td>
+			<textarea name="listelectives" style="width:339px;height:98px;z-index:47;" rows="5" cols="50">';
+			if($todo=='edit')
+			$content.="$listelectives";
+			$content.='</textarea></td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			';
+?>

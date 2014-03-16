@@ -1,0 +1,168 @@
+<?php
+
+//---------STUDENT_GENERAL-------------
+$fullname=$res1['fullname'];
+$degree=$res1['degree'];
+$branch=$res1['branch'];
+$branchcode=$res1['branchcode'];
+$admyear=$res1['admissionyear'];
+$branchrollno=$res1['branchrollno'];
+$category=$res1['category'];
+$dob=$res1['dob'];
+$gender=$res1['gender'];
+$age=$res1['age'];
+$height=$res1['height'];
+$weight=$res1['weight'];
+$ecact=$res1['ecact'];
+$adinfo=$res1['adinfo'];
+//-------------------------------------
+//----------STUDENT CONTACT------------
+if($res2)
+{
+	$presentaddress=$res2['present_address'];
+	$presentmobileno=$res2['present_mobileno'];
+	$presentphoneno=$res2['present_phoneno'];
+	$presentemail=$res2['present_email'];
+	$permaddress=$res2['perm_address'];
+	$permmobileno=$res2['perm_mobileno'];
+	$permphoneno=$res2['perm_phoneno'];
+	$permemail=$res2['perm_email'];
+}
+else
+{
+	$presentaddress='';
+	$presentmobileno='';
+	$presentphoneno='';
+	$presentemail='';
+	$permaddress='';
+	$permmobileno='';
+	$permphoneno='';
+	$permemail='';
+}
+//-----------------------------------------
+//-----------STUDENT ACADEMIC-------------
+if($res5)
+{
+	$year10=$res5['year10'];
+	$perc10=$res5['perc10'];
+	$board10=$res5['board10'];
+	$year12=$res5['year12'];
+	$perc12=$res5['perc12'];
+	$board12=$res5['board12'];
+	$sgpa1=$res5['sgpa1'];
+	$cgpa1=$res5['cgpa1'];
+	$mysem1=date("Y-m", strtotime($res5['mysem1'])+86400);
+	$sgpa2=$res5['sgpa2'];
+	$cgpa2=$res5['cgpa2'];
+	$mysem2=date("Y-m", strtotime($res5['mysem2'])+86400);
+	$sgpa3=$res5['sgpa3'];
+	$cgpa3=$res5['cgpa3'];
+	$mysem3=date("Y-m", strtotime($res5['mysem4'])+86400);
+	$sgpa4=$res5['sgpa4'];
+	$cgpa4=$res5['cgpa4'];
+	$mysem4=date("Y-m", strtotime($res5['mysem4'])+86400);
+	$sgpa5=$res5['sgpa5'];
+	if($sgpa5==0)
+	$sgpa5='';
+	if($res5['mysem5']!='0000-00-00')
+	$mysem5=date("Y-m", strtotime($res5['mysem5'])+86400);
+	else
+	$mysem5='';
+	$sgpa6=$res5['sgpa6'];
+	if($sgpa6==0)
+	$sgpa6='';
+	if($res5['mysem6']!='0000-00-00')
+	$mysem6=date("Y-m", strtotime($res5['mysem6'])+86400);
+	else
+	$mysem6='';
+	$sgpa7=$res5['sgpa7'];
+	if($sgpa7==0)
+	$sgpa7='';
+	if($res5['mysem7']!='0000-00-00')
+	$mysem7=date("Y-m", strtotime($res5['mysem7'])+86400);
+	else
+	$mysem7='';
+	$sgpa8=$res5['sgpa8'];
+	if($sgpa8==0)
+	$sgpa8='';
+	if($res5['mysem8']!='0000-00-00')
+	$mysem8=date("Y-m", strtotime($res5['mysem8'])+86400);
+	else
+	$mysem8='';
+	$cgpa5=$res5['cgpa5'];
+	if($cgpa5==0)
+	$cgpa5='';
+	$cgpa6=$res5['cgpa6'];
+	if($cgpa6==0)
+	$cgpa6='';
+	$cgpa7=$res5['cgpa7'];
+	if($cgpa7==0)
+	$cgpa7='';
+	$cgpa8=$res5['cgpa8'];
+	if($cgpa8==0)
+	$cgpa8='';
+
+	$passfirstattempt=$res5['passfirstattempt'];
+	$passfirstattemptdetails=$res5['passfirstattemptdetails'];
+	$topicseminar=$res5['topicseminar'];
+	$topicproject=$res5['topicproject'];
+	$listelectives=$res5['listelectives'];
+}
+else
+{
+		$year10='';
+	$perc10='';
+	$board10='';
+	$year12='';
+	$perc12='';
+	$board12='';
+	$mysem1='0000-00-00';
+	$mysem2='0000-00-00';
+	$mysem3='0000-00-00';
+	$mysem4='0000-00-00';
+	$mysem5='0000-00-00';
+	$mysem6='0000-00-00';
+	$mysem7='0000-00-00';
+	$mysem8='0000-00-00';
+	$sgpa1=0;
+	$sgpa2=0;
+	$sgpa3=0;
+	$sgpa4=0;
+	$sgpa5=0;
+	$sgpa6=0;
+	$sgpa7=0;
+	$sgpa8=0;
+	$cgpatillnow=0;
+	$passfirstattempt='';
+	$passfirstattemptdetails='';
+	$topicseminar='';
+	$topicproject='';
+	$listelectives='';
+	
+	
+}
+//---------------------------------------
+//----------STUDENT TRAINING------------
+$nameofcompany=array();
+$durationoftraining=array();
+$fieldoftraining=array();
+while($res3=mysqli_fetch_array($r3))
+{
+	$nameofcompany[]=$res3['nameofcompany'];
+	$durationoftraining[]=$res3['durationoftraining'];
+	$fieldoftraining[]=$res3['fieldoftraining'];
+}
+//------------------------------------
+//-------------STUDENT RESUME------------
+if($res4)
+{
+	/*
+	$resumename=$res4['admno'];
+	$resumesize=$res4['filesize'];
+	$resumetype=$res4['filetype'];
+	$resumecontent=$res4['resume'];
+	*/
+}
+//---------------------------------------
+
+?>
