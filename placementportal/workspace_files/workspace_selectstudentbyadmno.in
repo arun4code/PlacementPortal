@@ -1,0 +1,112 @@
+<script type="text/javascript">
+function branchdropdown(obj)
+{
+	var btech=document.getElementsByName("btech");
+	var mtech=document.getElementsByName("mtech");
+	
+	var msc=document.getElementsByName("msc");
+	mtech[0].style.display='none';
+	btech[0].style.display='none';
+	msc[0].style.display='none';
+
+	if(obj.value=='U')
+		btech[0].style.display='block';
+	else if(obj.value=='P')
+		mtech[0].style.display='block';
+	else if(obj.value=='I')
+		msc[0].style.display='block';
+}
+</script>
+<?php
+//SET VARIABLE $todo BEFORE INCLUDING
+
+$content.='
+				<select name="degree"  style="position:absolute;left:310px;top:23px;width:50px;height:25px;z-index:10;" onchange="branchdropdown(this)">
+				<option selected="" value="U">U</option>
+				<option value="I">I</option>
+				<option value="P">P</option>
+				</select>
+				<select name="admyear" size="1"  style="position:absolute;left:362px;top:23px;width:60px;height:25px;z-index:10;">
+				';
+				$curyear=date("Y");
+				for($i=$curyear-10;$i<=$curyear;$i++)
+				{
+					if($i!=$curyear-3)
+						$content.="<option value='$i'>";
+					else
+						$content.="<option value='$i' selected=''>";
+					
+					$i2=$i%100;
+					
+					if($i2<10)
+						$content.='0';
+					
+					$content.="$i2";
+					
+					$content.='</option>';
+				}
+					$content.='
+				</select>
+				<div name="all_branches" style="position:absolute;left:422px;top:23px;width:60px;height:25px;z-index:1;">
+			
+				<div name="btech" style="diplay:block;">
+				<select name="branchbtech" size="1" style="height:25px;">
+				<option value="CO">CO</option>
+				<option value="ME">ME</option>
+				<option value="CH">CH</option>
+				<option value="CE">CE</option>
+				<option value="EE">EE</option>
+				<option value="EC">EC</option>
+				</select>
+				</div>
+				<div name="mtech" style="display:none;">
+				<select name="branchmtech" size="1" style="height:25px;" >
+				<option value="PS">PS</option>
+				<option value="TD">TD</option>
+				<option value="EC">EC</option>
+				<option value="EN">EN</option>
+				<option value="VL">VL</option>
+				<option value="CC">CC</option>
+				<option value="CH">CH</option>
+				<option value="CO">CO</option>
+				<option value="IP">IP</option>
+				<option value="ME">ME</option>
+				<option value="EL">EL</option>
+				<option value="WR">WR</option>
+				<option value="TM">TM</option>
+				<option value="UP">UP</option>
+				<option value="SM">SM</option>
+				<option value="ST">ST</option>
+				<option value="TP">TP</option>
+				</select>
+				</div>
+				<div name="msc" style="display:none;" style="height:25px;">
+				<select name="branchmsc" size="1" >
+				<option value="CY">CY</option>
+				<option value="PH">PH</option>
+				<option value="MA">MA</option>
+				</select>
+				</div>
+			
+				</div>
+				
+				<select name="branchrollno" size="1"  style="position:absolute;left:473px;top:23px;width:63px;height:25px;z-index:2;">';
+				for($i=1;$i<=250;$i++)
+				{
+					$content.="	<option value='$i'>";
+			
+					if((int)($i/10)==0) 
+						$content.= "00"; 
+					else if((int)($i/100)==0) 
+						$content.= "0"; 
+					$content.="$i</option>";
+					
+				}
+				$content.='
+				</select>
+				<input type="hidden" name="todo" value="';
+				$content.="$todo";
+				$content.='">
+				
+				';
+?>

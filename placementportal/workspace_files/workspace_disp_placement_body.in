@@ -1,0 +1,51 @@
+<?php
+$content.='
+	<div  style="position:absolute;left:10px;top:120px;width:670px;height:407px;z-index:19;overflow:auto;">
+	
+	';
+	$numrows=mysqli_num_rows($r6);
+	$tableheight=53*($numrows+1);
+$content.='
+	<table id="table_internship" style="position:absolute;left:0px;top:18px;width:648px;vertical-align:middle;text-align:center;table-layout: fixed;word-wrap : break-word;height:';			
+
+	$content.="$tableheight";
+	$content.='px;z-index:2;" border="1" >
+	<tbody>
+	<tr>
+	<td style="width:10%;">
+	<span style="color:#000000;font-family:Arial;font-size:13px;"><b>SR. NO. </b></span></td>
+	<td style="width:45%;">
+	<span style="color:#000000;font-family:Arial;font-size:13px;"><b>ORGANISATION NAME</b></span></td>
+	<td style="width:45%;">
+	<span style="color:#000000;font-family:Arial;font-size:13px;"><b>DATE OF PLACEMENT</b></span> </td>
+	</tr>
+	';
+	for($i=1;$i<=$numrows;$i++)
+	{
+		$res6=mysqli_fetch_array($r6);
+		$content.='
+		<tr>
+		<td>
+		<span style="color:#000000;font-family:Arial;font-size:13px;">';
+		$content.=$i;
+		$content.='</span></td>
+		<td>
+		<span style="color:#000000;font-family:Arial;font-size:13px;">';
+		$content.=$res6['nameoforganisation'];
+		$content.='</span></td>
+		<td >
+		<span style="color:#000000;font-family:Arial;font-size:13px;">';
+		$content.=$res6['dateofplacement'];
+		$content.='</span></td>
+		</tr>
+		';
+			
+	}
+	$content.='
+	</tbody>
+	</table>';
+	
+	$content.='
+	</div>
+	';
+?>
