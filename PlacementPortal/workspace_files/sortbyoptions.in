@@ -1,8 +1,0 @@
-<?php
-	$content.='
-		<option value="----">- - - - - - -</option>
-		<option value="branch" >BRANCH</option>
-		<option value="cgpatillnow desc">CGPA</option>
-		<option value="fullname">ELECTIVES</option>
-		';
-	?>

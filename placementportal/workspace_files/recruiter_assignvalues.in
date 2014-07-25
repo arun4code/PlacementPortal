@@ -1,9 +1,0 @@
-<?php
-
-
-
-$address=$res['address'];
-$contactno=$res['contactno'];
-$nameoforganisation=$res['nameoforganisation'];
-$emailaddress=$res['emailaddress'];
-?>
