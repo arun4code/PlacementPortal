@@ -1,0 +1,18 @@
+<?php 
+
+$vertical_menu.= '
+<div id="vertical_menu" style="position:absolute;left:5px;top:15px;width:200px;height:px;z-index:16;border-radius:5px;box-shadow:2px 2px 10px 10px #C9C9C9;">
+<ul align="center">
+		 <li class="vertical_menu_main"><div><a><b>STUDENTS</b></a></div>
+			<ul>
+				<li ><a href="./login_students.php">Login</a></li>
+				<li ><a href="./placementstatistics.php">Placement Records</a></li>
+		
+			</ul>
+		</li>
+     
+</ul>
+</div>
+';
+
+?>
