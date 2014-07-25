@@ -1,0 +1,9 @@
+<?php 
+$content.="
+<option value='----' selected='selected'>- - - -</option>";
+for($i=1;$i<sizeof($nameofcolumns);$i++)
+{
+	$content.="<option value='";$content.=$nameofcolumns[$i];$content.="' >";$content.=$actualnameofcolumns[$nameofcolumns[$i]];$content.="</option>";
+}
+
+?>
